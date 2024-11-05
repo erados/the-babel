@@ -553,30 +553,50 @@ nav .logo {
 }
 
 .stat-item {
-    text-align: center;
-    padding: 2rem;
     background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 12px;
+    padding: 2.5rem 2rem;
+    text-align: center;
     transition: transform 0.3s ease;
 }
 
-.stat-item:hover {
-    transform: translateY(-5px);
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
 .stat-number {
     display: block;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin: 0.5rem 0;
     background: linear-gradient(45deg, #fff, #888);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .stat-label {
+    display: block;
+    font-size: 1rem;
     color: rgba(255, 255, 255, 0.6);
-    font-size: 0.9rem;
+}
+
+/* 호버 효과 */
+.stat-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* 반응형 조정 */
+@media (max-width: 768px) {
+    .stat-icon {
+        font-size: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
 }
 
 .team-section {
