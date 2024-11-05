@@ -6,24 +6,13 @@
 }
 
 body {
-    background: var(--bg-color);
+    background: #000;
     color: var(--text-color);
     font-family: 'Pretendard', system-ui;
     margin: 0;
     overflow-x: hidden;
 }
 
-.noise-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('/noise.png');
-    opacity: 0.05;
-    pointer-events: none;
-    z-index: 1;
-}
 
 nav {
     padding: 2rem 5rem;
@@ -33,9 +22,17 @@ nav {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 10;
-    box-sizing: border-box;
     left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+/* nav 내부의 실제 클릭 가능한 요소들만 pointer-events 활성화 */
+nav .logo,
+nav .nav-links,
+nav .nav-links a {
+    pointer-events: auto;
 }
 
 /* 네비게이션의 작은 로고 */
@@ -43,6 +40,9 @@ nav .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
+    mix-blend-mode: exclusion;
+    position: relative;
+    z-index: 2;
 }
 
 /* 큰 배경 로고 */
@@ -66,7 +66,6 @@ nav .logo {
     justify-content: space-between;
     padding: 0 5rem;
     position: relative;
-    isolation: isolate;
 }
 
 .hero-text {
@@ -81,7 +80,9 @@ nav .logo {
     line-height: 1.2;
     margin-bottom: 1.5rem;
     color: white;
-    mix-blend-mode: difference;
+    mix-blend-mode: exclusion;
+    position: relative;
+    z-index: 2;
 }
 
 .subtitle {
@@ -94,14 +95,16 @@ nav .logo {
     font-size: 1.1rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.6);
+    flex-grow: 1;
 }
 
 .hero-visual {
-    flex: 1;
+    position: relative;
+    flex-grow: 1;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
 }
 
 .projects {
@@ -110,15 +113,19 @@ nav .logo {
     margin: 0 auto;
     padding: 2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
     gap: 2rem;
+    justify-content: center;
 }
 
 .project-item {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
     background: rgba(255, 255, 255, 0.03);
     border-radius: 12px;
     padding: 1.5rem;
-    transition: transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .project-item:hover {
@@ -160,9 +167,7 @@ nav .logo {
 /* 반응형 디자인 */
 @media (max-width: 900px) {
     .projects {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-        padding: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     }
     
     .project-image {
@@ -186,67 +191,129 @@ nav .logo {
 }
 
 .category-btn {
-    padding: 0.5rem 1rem;
-    border: 1px solid #444;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     background: transparent;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.6);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.category-btn:hover,
+.category-btn:hover {
+    color: white;
+    border-color: white;
+}
+
 .category-btn.active {
-    background: #fff;
-    color: #000;
+    background: white;
+    color: black;
+    border-color: white;
 }
 
 /* 3D 큐브 애니메이션 */
 .cube {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     position: relative;
     transform-style: preserve-3d;
     animation: rotate 20s infinite linear;
+    transform-origin: center center;
 }
 
 .cube div {
     position: absolute;
-    width: 200px;
-    height: 200px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
+    box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
 }
 
-/* 큐브의 6면 정의 */
-.front { transform: translateZ(100px); }
-.back { transform: translateZ(-100px) rotateY(180deg); }
-.right { transform: rotateY(90deg) translateZ(100px); }
-.left { transform: rotateY(-90deg) translateZ(100px); }
-.top { transform: rotateX(90deg) translateZ(100px); }
-.bottom { transform: rotateX(-90deg) translateZ(100px); }
+/* 큐브의 각 면에 그데이션 효과 추가 */
+.front { 
+    transform: translateZ(125px);
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
 
+.back { 
+    transform: translateZ(-125px) rotateY(180deg);
+    background: linear-gradient(-45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.right { 
+    transform: rotateY(90deg) translateZ(125px);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.left { 
+    transform: rotateY(-90deg) translateZ(125px);
+    background: linear-gradient(-90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.top { 
+    transform: rotateX(90deg) translateZ(125px);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.bottom { 
+    transform: rotateX(-90deg) translateZ(125px);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+/* 회전 애니메이션 */
 @keyframes rotate {
-    from {
-        transform: rotateX(0deg) rotateY(0deg);
+    0% {
+        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
     }
-    to {
-        transform: rotateX(360deg) rotateY(360deg);
+    100% {
+        transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg);
     }
 }
 
-/* 반응형 조정 */
+/* 큐브 주변에 빛나는 효과 */
+.cube::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 70%
+    );
+    pointer-events: none;
+    animation: glow 4s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+
+/* 반응형 디자인 */
 @media (max-width: 768px) {
     .cube {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
     }
     
     .cube div {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
     }
+    
+    .front, .back { transform: translateZ(100px); }
+    .right, .left { transform: rotateY(90deg) translateZ(100px); }
+    .top, .bottom { transform: rotateX(90deg) translateZ(100px); }
 }
 
 /* 기존 CSS에 추가 */
@@ -254,7 +321,6 @@ nav .logo {
     margin-top: 4rem;
     max-width: 600px;
     line-height: 1.8;
-    opacity: 0.8;
 }
 
 .hero-description p {
@@ -272,11 +338,12 @@ nav .logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.3s ease;
+    z-index:-1;
 }
 
 .project-item:hover .project-overlay {
     opacity: 1;
+    z-index: 1;
 }
 
 .view-project {
@@ -362,6 +429,7 @@ nav .logo {
     display: flex;
     gap: 3rem;
     margin-right: 2rem;
+    z-index: 3;
 }
 
 .nav-links a {
@@ -407,7 +475,7 @@ nav .logo {
 }
 
 #work {
-    padding: 0.3rem 2rem 4rem 2rem; /* 상 우 하 좌 */
+    padding: 0.3rem 2rem 10rem 2rem; /* 상 우 하 좌 */
     width: 100%;
     box-sizing: border-box;
 }
@@ -426,5 +494,186 @@ nav .logo {
     
     .project-categories {
         margin-bottom: 3rem;
+    }
+}
+
+/* About 섹션 스타일 */
+#about {
+    padding: 0.5rem 2rem 4rem 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    min-height: 100vh;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.about-header h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.about-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 6rem;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, #fff, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+.team-section {
+    margin-top: 6rem;
+}
+
+.team-section h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.member-photo-placeholder {
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+}
+
+.team-member h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-member p {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 968px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .stats-grid {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    #about {
+        padding: 6rem 1rem;
+    }
+    
+    .about-header h2 {
+        font-size: 2.5rem;
+    }
+    
+    .stats-grid {
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        padding: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+/* 팀원 이미지 스타일 수정 */
+.member-photo {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* 반응형 처리 */
+@media (max-width: 1200px) {
+    .projects {
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .projects {
+        grid-template-columns: minmax(300px, 1fr);
     }
 }
