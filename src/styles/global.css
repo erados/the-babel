@@ -1,0 +1,206 @@
+:root {
+    --bg-color: #0F0F0F;
+    --text-color: #F0F0F0;
+    --accent-color: #FF3333;
+    --secondary-color: #1A1A1A;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Pretendard', system-ui;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/noise.png');
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 1;
+}
+
+nav {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    mix-blend-mode: difference;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.hero {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+}
+
+.hero-text h1 {
+    font-size: 5rem;
+    line-height: 1;
+    margin: 0;
+    font-weight: 900;
+    letter-spacing: -3px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    margin-top: 2rem;
+}
+
+.projects {
+    padding: 4rem 2rem;
+}
+
+.project-item {
+    margin-bottom: 8rem;
+    position: relative;
+}
+
+.project-number {
+    font-size: 12rem;
+    font-weight: 900;
+    opacity: 0.1;
+    position: absolute;
+    top: -6rem;
+    left: -2rem;
+    z-index: -1;
+}
+
+.project-image {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    background: var(--secondary-color);
+}
+
+/* 호버 효과 */
+.project-item:hover .project-image {
+    transform: scale(1.02);
+    transition: transform 0.5s ease;
+}
+
+/* 3D 큐브 애니메이션 */
+.cube {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate 20s infinite linear;
+}
+
+@keyframes rotate {
+    from { transform: rotateX(0) rotateY(0); }
+    to { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+/* 기존 CSS에 추가 */
+.hero-description {
+    margin-top: 4rem;
+    max-width: 600px;
+    line-height: 1.8;
+    opacity: 0.8;
+}
+
+.hero-description p {
+    margin: 1rem 0;
+}
+
+.project-description {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    margin: 1rem 0;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 51, 51, 0.9);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+
+.project-item:hover .project-overlay {
+    opacity: 1;
+}
+
+.view-project {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.project-item:hover .view-project {
+    transform: translateY(0);
+}
+
+/* 커스텀 커서 */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* 로딩 애니메이션 */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* 이미지 관련 스타일 추가 */
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-item:hover .project-image img {
+    transform: scale(1.05);
+}
+
+/* 이미지 밝기 조절 */
+.project-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+}
