@@ -15,56 +15,78 @@ body {
     overflow-x: hidden;
 }
 
+/* 네비게이션 스타일 */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+/* 숨김 상태 클래스 */
+header.nav-hidden {
+    transform: translateY(-100%);
+}
 
 nav {
-    padding: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.nav-content {
+    width: 100%;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    width: 100%;
-    max-width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-sizing: border-box;
-    pointer-events: none;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    transform: translateY(0);
-    opacity: 1;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
+    padding: 0 2rem;
 }
 
-/* nav 내부의 실제 클릭 가능한 요소들만 pointer-events 활성화 */
-nav .logo,
-nav .nav-links,
-nav .nav-links a {
-    pointer-events: auto;
+/* 숨김 상태 */
+nav.nav-hidden {
+    transform: translateY(-100%);
 }
 
-/* 네비게이션의 작은 로고 */
-nav .logo {
+.logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
-    mix-blend-mode: exclusion;
-    position: relative;
-    z-index: 2;
 }
 
-/* 큰 배경 로고 */
-.background-logo {
-    position: fixed;
-    font-size: 15vw;
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.1);
-    pointer-events: none;
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    mix-blend-mode: difference;
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* 모바일 대응 */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 1rem;
+    }
+
+    .nav-content {
+        padding: 0 1rem;
+    }
 }
 
 .hero {
@@ -77,8 +99,8 @@ nav .logo {
 }
 
 .hero-text {
-    flex: 1;
-    max-width: 600px;
+    flex: 3;
+    /* max-width: 600px; */
     position: relative;
     z-index: 2;
 }
@@ -303,48 +325,48 @@ nav .logo {
     transform-style: preserve-3d;
     animation: rotate 20s infinite linear;
     transform-origin: center center;
+    margin: auto;
 }
 
 .cube div {
     position: absolute;
     width: 250px;
     height: 250px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(5px);
     box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
 }
 
-/* 큐브의 각 면에 그데이션 효과 추가 */
+/* 큐브의 각 면에 그라데이션 강화 */
 .front { 
     transform: translateZ(125px);
-    background: linear-gradient(45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
 }
 
 .back { 
     transform: translateZ(-125px) rotateY(180deg);
-    background: linear-gradient(-45deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    background: linear-gradient(-45deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
 }
 
 .right { 
     transform: rotateY(90deg) translateZ(125px);
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
 }
 
 .left { 
     transform: rotateY(-90deg) translateZ(125px);
-    background: linear-gradient(-90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    background: linear-gradient(-90deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
 }
 
 .top { 
     transform: rotateX(90deg) translateZ(125px);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
 }
 
 .bottom { 
     transform: rotateX(-90deg) translateZ(125px);
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
 }
 
 /* 회전 애니메이션 */
@@ -357,7 +379,7 @@ nav .logo {
     }
 }
 
-/* 큐브 주변에 빛나는 효과 */
+/* 큐브 주변 빛나는 효과 강화 */
 .cube::after {
     content: '';
     position: absolute;
@@ -395,9 +417,12 @@ nav .logo {
         height: 200px;
     }
     
-    .front, .back { transform: translateZ(100px); }
-    .right, .left { transform: rotateY(90deg) translateZ(100px); }
-    .top, .bottom { transform: rotateX(90deg) translateZ(100px); }
+    .front { transform: translateZ(100px); }
+    .back { transform: translateZ(-100px) rotateY(180deg); }
+    .right { transform: rotateY(90deg) translateZ(100px); }
+    .left { transform: rotateY(-90deg) translateZ(100px); }
+    .top { transform: rotateX(90deg) translateZ(100px); }
+    .bottom { transform: rotateX(-90deg) translateZ(100px); }
 }
 
 /* 기존 CSS에 추가 */
@@ -811,7 +836,7 @@ footer a:hover {
     }
 }
 
-/* 전체 컨테이너 설정 */
+/* 전체 컨테너 설정 */
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -820,7 +845,6 @@ main {
 
 /* 헤더 네비게이션 */
 header nav {
-    max-width: 1200px;
     margin: 0 auto;
     padding: 1rem 2rem;
 }
