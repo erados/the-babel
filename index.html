@@ -14,8 +14,28 @@
             <div class="nav-content">
                 <div class="logo">BABEL</div>
                 <div class="nav-links">
-                    <a href="#work">Work</a>
-                    <a href="#about">About</a>
+                    <a href="#work" data-i18n="nav.work">Work</a>
+                    <a href="#about" data-i18n="nav.about">About</a>
+                    <div class="language-selector">
+                        <div class="language-toggle">
+                            <span class="globe-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2 12H22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
+                            <span class="current-lang">KO</span>
+                        </div>
+                        <div class="language-options">
+                            <button data-lang="ko">
+                                <span>한국어</span>
+                            </button>
+                            <button data-lang="en">
+                                <span>English</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -24,11 +44,11 @@
     <main>
         <section class="hero">
             <div class="hero-text">
-                <h1>We Build<br>Digital Babel</h1>
-                <p class="subtitle">디지털 세상의 소통을 한 단계 더 발전시킵니다</p>
+                <h1 data-i18n="hero.title">We Build<br>Digital Babel</h1>
+                <p class="subtitle" data-i18n="hero.subtitle">디지털 세상의 소통을 한 단계 더 발전시킵니다</p>
                 <div class="hero-description">
-                    <p>우리는 복잡한 디지털 세상을 연결하고 단순화하는 솔루션을 만듭니다.</p>
-                    <p>우리가 만드는 각각의 프로젝트는 현대 사회의 작은 문제들을 해결합니다.</p>
+                    <p data-i18n="hero.description1">우리는 복잡한 디지털 세상을 연결하고 단순화하는 솔루션을 만듭니다.</p>
+                    <p data-i18n="hero.description2">우리가 만드는 각각의 프로젝트는 현대 사회의 작은 문제들을 해결합니다.</p>
                 </div>
             </div>
             <div class="hero-visual">
@@ -45,16 +65,16 @@
 
         <section id="work">
             <div class="project-categories">
-                <button class="category-btn active" data-category="all">All</button>
-                <button class="category-btn" data-category="webapp">Web App</button>
-                <button class="category-btn" data-category="chrome">Chrome Extension</button>
+                <button class="category-btn active" data-category="all" data-i18n="projects.categories.all">All</button>
+                <button class="category-btn" data-category="webapp" data-i18n="projects.categories.webapp">Web App</button>
+                <button class="category-btn" data-category="chrome" data-i18n="projects.categories.chrome">Chrome Extension</button>
             </div>
             
             <div class="projects">
                 <div class="project-item" data-category="webapp" data-project="ref-roulette">
                     <div class="project-number">01</div>
-                    <h2>Ref Roulette</h2>
-                    <p class="project-description">레퍼럴 공유 플랫폼</p>
+                    <h2 data-i18n="projects.refroulette.title">Ref Roulette</h2>
+                    <p class="project-description" data-i18n="projects.refroulette.description">레퍼럴 공유 플랫폼</p>
                     <div class="project-image">
                         <a href="https://ref-roulette.com/home" target="_blank">
                             <img src="src/assets/images/ref-roulette.gif" alt="Ref Roulette Preview">
@@ -64,8 +84,8 @@
 
                 <div class="project-item" data-category="webapp" data-project="rulebook">
                     <div class="project-number">02</div>
-                    <h2>Rulebook</h2>
-                    <p class="project-description">투표 커뮤니티</p>
+                    <h2 data-i18n="projects.rulebook.title">Rulebook</h2>
+                    <p class="project-description" data-i18n="projects.rulebook.description">투표 커뮤니티</p>
                     <div class="project-image">
                         <a href="https://rulebook.the-babel.com" target="_blank">
                             <img src="src/assets/images/rulebook.png" alt="Rulebook Preview">
@@ -75,8 +95,8 @@
 
                 <div class="project-item" data-category="webapp" data-project="lastwords">
                     <div class="project-number">03</div>
-                    <h2>Lastwords</h2>
-                    <p class="project-description">디지털 유서 전달 서비스</p>
+                    <h2 data-i18n="projects.lastwords.title">Lastwords</h2>
+                    <p class="project-description" data-i18n="projects.lastwords.description">디지털 유서 전달 서비스</p>
                     <div class="project-image">
                         <a href="https://lastwords.the-babel.com" target="_blank">
                             <img src="src/assets/images/lastwords.png" alt="Lastwords Preview">
@@ -86,8 +106,8 @@
 
                 <div class="project-item" data-category="chrome" data-project="safespace">
                     <div class="project-number">04</div>
-                    <h2>SafeSpace</h2>
-                    <p class="project-description">웹 컨텐츠 필터링 크롬 익스텐션</p>
+                    <h2 data-i18n="projects.safespace.title">SafeSpace</h2>
+                    <p class="project-description" data-i18n="projects.safespace.description">웹 컨텐츠 필터링 크롬 익스텐션</p>
                     <div class="project-image">
                         <a href="https://chromewebstore.google.com/detail/safespace/ogbpkcempgohojfamfinjnhkfjbdplae" target="_blank">
                             <img src="src/assets/images/safespace.png" alt="SafeSpace Preview">
@@ -100,49 +120,49 @@
         <section id="about">
             <div class="about-container">
                 <div class="about-header">
-                    <h2>About Us</h2>
-                    <p class="about-subtitle">디지털 세상을 연결하는 가교가 되겠습니다</p>
+                    <h2 data-i18n="about.title">About Us</h2>
+                    <p class="about-subtitle" data-i18n="about.subtitle">디지털 세상을 연결하는 가교가 되겠습니다</p>
                 </div>
                 
                 <div class="about-content">
                     <div class="about-text">
-                        <p>The Babel은 2024년에 설립된 디지털 프로덕트 스튜디오입니다. 우리는 복잡한 디지털 환경에서 사용자들이 직면하는 문제들을 해결하고, 더 나은 경험을 제공하기 위해 노력합니다.</p>
-                        <p>각각의 프로젝트는 우리의 철학을 담고 있습니다. 기술을 통해 사람과 사람을 연결하고, 복잡한 것을 단순하게 만들며, 새로운 가치를 창출합니다.</p>
+                        <p data-i18n="about.description1">The Babel은 2024년에 설립된 디지털 프로덕트 스튜디오입니다. 우리는 복잡한 디지털 환경에서 사용자들이 직면하는 문제들을 해결하고, 더 나은 경험을 제공하기 위해 노력합니다.</p>
+                        <p data-i18n="about.description2">각각의 프로젝트는 우리의 철학을 담고 있습니다. 기술을 통해 사람과 사람을 연결하고, 복잡한 것을 단순하게 만들며, 새로운 가치를 창출합니다.</p>
                     </div>
                     
                     <div class="stats-grid">
                         <div class="stat-item">
                             <div class="stat-icon">🚀</div>
                             <span class="stat-number">4</span>
-                            <span class="stat-label">Products Built</span>
+                            <span class="stat-label" data-i18n="about.stats.productsBuilt">Products Built</span>
                         </div>
                         <div class="stat-item">
                             <div class="stat-icon">💡</div>
                             <span class="stat-number">2024</span>
-                            <span class="stat-label">Founded</span>
+                            <span class="stat-label" data-i18n="about.stats.founded">Founded</span>
                         </div>
                         <div class="stat-item">
                             <div class="stat-icon">⚡</div>
                             <span class="stat-number">3</span>
-                            <span class="stat-label">Tech Stacks</span>
+                            <span class="stat-label" data-i18n="about.stats.techStacks">Tech Stacks</span>
                         </div>
                         <div class="stat-item">
                             <div class="stat-icon">🎯</div>
                             <span class="stat-number">1</span>
-                            <span class="stat-label">Mission</span>
+                            <span class="stat-label" data-i18n="about.stats.mission">Mission</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="team-section">
-                    <h3>Our Team</h3>
+                    <h3 data-i18n="about.team.title">Our Team</h3>
                     <div class="team-grid">
                         <div class="team-member">
                             <div class="member-photo">
                                 <img src="src/assets/images/people/erados.jpeg" alt="송명우">
                             </div>
                             <h4>송명우</h4>
-                            <p>Founder & CEO</p>
+                            <p data-i18n="about.team.role">Founder & CEO</p>
                         </div>
                         <!-- 필요한 만큼 팀원 추가 -->
                     </div>
@@ -167,6 +187,7 @@
         </div>
     </footer>
 
+    <script src="src/js/translations.js"></script>
     <script src="src/js/main.js"></script>
 </body>
 </html> 
