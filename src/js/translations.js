@@ -6,9 +6,9 @@ const translations = {
         },
         hero: {
             title: "We Build<br>Digital Babel",
-            subtitle: "디지털 세상의 소통을 한 단계 더 발전시킵니다",
-            description1: "우리는 복잡한 디지털 세상을 연결하고 단순화하는 솔루션을 만듭니다.",
-            description2: "우리가 만드는 각각의 프로젝트는 현대 사회의 작은 문제들을 해결합니다."
+            subtitle: "국가와 언어의 한계를 뛰어넘어 당신에게 주어진 모든 인연과 기회를 되찾으세요.",
+            description1: "The Babel에서는 모든 사람들의 말이 당신의 언어로 통합되는 세상을 만듭니다.",
+            description2: "당신에게 주어진 모든 기회를 탐험하세요."
         },
         projects: {
             categories: {
@@ -35,9 +35,9 @@ const translations = {
         },
         about: {
             title: "About Us",
-            subtitle: "디지털 세상을 연결하는 가교가 되겠습니다",
-            description1: "The Babel은 2024년에 설립된 디지털 프로덕트 스튜디오입니다. 우리는 복잡한 디지털 환경에서 사용자들이 직면하는 문제들을 해결하고, 더 나은 경험을 제공하기 위해 노력합니다.",
-            description2: "각각의 프로젝트는 우리의 철학을 담고 있습니다. 기술을 통해 사람과 사람을 연결하고, 복잡한 것을 단순하게 만들며, 새로운 가치를 창출합니다.",
+            subtitle: "모두의 삶에 도움이 될 수 있도록",
+            description1: "The Babel은 2024년에 설립된 디지털 프로덕트 스튜디오입니다. 우리는 궁극적으로 기술을 통해 사람과 사람을 연결하고, 디지털 세상의 소통을 한 단계 더 발전시킵니다.",
+            description2: "서툴지만 꾸준히 나아가는 우리의 모든 프로젝트는 이 목표를 향한 여정 속에서 The Babel의 철학을 담고 있습니다.",
             stats: {
                 productsBuilt: "Products Built",
                 founded: "Founded",
@@ -57,9 +57,9 @@ const translations = {
         },
         hero: {
             title: "We Build<br>Digital Babel",
-            subtitle: "Advancing Digital Communication to the Next Level",
-            description1: "We create solutions that connect and simplify the complex digital world.",
-            description2: "Each project we build solves small problems in modern society."
+            subtitle: "Transcend national and language barriers to reclaim all the connections and opportunities given to you.",
+            description1: "At The Babel, we create a world where everyone's words are unified in your language.",
+            description2: "Explore all the opportunities given to you."
         },
         projects: {
             categories: {
@@ -86,9 +86,10 @@ const translations = {
         },
         about: {
             title: "About Us",
-            subtitle: "Becoming a Bridge in the Digital World",
-            description1: "The Babel is a digital product studio established in 2024. We strive to solve problems users face in complex digital environments and provide better experiences.",
-            description2: "Each project embodies our philosophy. We connect people through technology, simplify complexity, and create new value.",
+            subtitle: "To help everyone's lives",
+            description1: "The Babel is a digital product studio established in 2024. Ultimately, we connect people through technology and advance digital communication to the next level.",
+            description2: "Each project that becomes part of this journey embodies our philosophy.",
+            
             stats: {
                 productsBuilt: "Products Built",
                 founded: "Founded",
@@ -97,7 +98,8 @@ const translations = {
             },
             team: {
                 title: "Our Team",
-                role: "Founder & CEO"
+                role: "Founder & CEO",
+                name: "Myungwoo Song"
             }
         }
     }
