@@ -494,7 +494,7 @@ nav.nav-hidden {
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
-        padding: 2rem;
+        padding: 8rem 2rem;
         text-align: center;
         justify-content: center;
     }
