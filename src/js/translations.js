@@ -46,7 +46,7 @@ const translations = {
             },
             team: {
                 title: "Our Team",
-                role: "Founder & CEO"
+                role: "Founder & Representative"
             }
         }
     },
@@ -98,7 +98,7 @@ const translations = {
             },
             team: {
                 title: "Our Team",
-                role: "Founder & CEO",
+                role: "Founder & Representative",
                 name: "Myungwoo Song"
             }
         }
