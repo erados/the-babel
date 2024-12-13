@@ -156,4 +156,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 초기 언어 표시
     currentLangDisplay.textContent = currentLang.toUpperCase();
+
+    /* 인터섹션 옵저버를 사용하여 큐브가 화면에 보일 때만 애니메이션 실행 */
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.target.classList.contains('cube')) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('paused');
+                } else {
+                    entry.target.classList.add('paused');
+                }
+            }
+        });
+    });
+
+    document.querySelectorAll('.cube').forEach(cube => {
+        observer.observe(cube);
+    });
+
 }); 

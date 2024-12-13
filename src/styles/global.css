@@ -138,6 +138,7 @@ nav.nav-hidden {
     display: flex;
     justify-content: center;
     align-items: center;
+    perspective: 3000px;
 }
 
 .projects {
@@ -364,16 +365,26 @@ nav.nav-hidden {
     animation: rotate 20s infinite linear;
     transform-origin: center center;
     margin: auto;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
 }
 
 .cube div {
     position: absolute;
     width: 250px;
     height: 250px;
-    background: rgba(255, 255, 255, 0.03);
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.05) 0%,
+        rgba(255, 255, 255, 0.01) 50%,
+        rgba(255, 255, 255, 0.05) 100%
+    );
     border: 1px solid rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(5px);
+    /* backdrop-filter: blur(1px); */
     box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.1);
+    will-change: transform;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 
 /* 큐브의 각 면에 그라데이션 강화 */
@@ -407,13 +418,17 @@ nav.nav-hidden {
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
 }
 
+.cube.paused {
+    animation-play-state: paused;
+}
+
 /* 회전 애니메이션 */
 @keyframes rotate {
-    0% {
-        transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    from {
+        transform: translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
     }
-    100% {
-        transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg);
+    to {
+        transform: translate3d(0, 0, 0) rotateX(360deg) rotateY(720deg) rotateZ(360deg);
     }
 }
 
