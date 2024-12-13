@@ -14,11 +14,12 @@ const translations = {
             categories: {
                 all: "전체",
                 webapp: "웹 앱",
-                chrome: "크롬 익스텐션"
+                chrome: "크롬 익스텐션",
+                mobileapp: "모바일 앱"
             },
             refroulette: {
                 title: "Ref Roulette",
-                description: "레퍼럴 공유 플랫폼"
+                description: "레퍼럴 공유 플랫폼<br/>(공사중)"
             },
             rulebook: {
                 title: "Rulebook",
@@ -31,6 +32,10 @@ const translations = {
             safespace: {
                 title: "SafeSpace",
                 description: "웹 컨텐츠 필터링 크롬 익스텐션"
+            },
+            chordmate: {
+                title: "Chord Mate",
+                description: "음악의 코드를 인식하는 앱<br/>(심사 중)"
             }
         },
         about: {
@@ -69,7 +74,7 @@ const translations = {
             },
             refroulette: {
                 title: "Ref Roulette",
-                description: "Referral Sharing Platform"
+                description: "Referral Sharing Platform<br/>(Under Maintenance)"
             },
             rulebook: {
                 title: "Rulebook",
@@ -82,6 +87,10 @@ const translations = {
             safespace: {
                 title: "SafeSpace",
                 description: "Web Content Filtering Chrome Extension"
+            },
+            chordmate: {
+                title: "Chord Mate",
+                description: "Chord Recognition App<br/>(Coming Soon)"
             }
         },
         about: {

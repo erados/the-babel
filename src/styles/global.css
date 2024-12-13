@@ -153,6 +153,9 @@ nav.nav-hidden {
 }
 
 .project-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
     max-width: 280px;
     background: rgba(255, 255, 255, 0.02);
@@ -185,6 +188,7 @@ nav.nav-hidden {
     aspect-ratio: 16/9;
     border-radius: 8px;
     overflow: hidden;
+    margin-top: auto;
 }
 
 .project-image img {
