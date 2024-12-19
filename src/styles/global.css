@@ -362,7 +362,7 @@ nav.nav-hidden {
     height: 250px;
     position: relative;
     transform-style: preserve-3d;
-    animation: rotate 20s infinite linear;
+    animation: rotate 120s infinite linear;
     transform-origin: center center;
     margin: auto;
     will-change: transform;
