@@ -19,7 +19,7 @@ const translations = {
             },
             refroulette: {
                 title: "Ref Roulette",
-                description: "레퍼럴 공유 플랫폼<br/>(공사중)"
+                description: "레퍼럴 공유 플랫폼<br/>(공사 중)"
             },
             rulebook: {
                 title: "Rulebook",
