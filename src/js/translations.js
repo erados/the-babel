@@ -35,7 +35,11 @@ const translations = {
             },
             chordmate: {
                 title: "Chord Mate",
-                description: "음악의 코드를 인식하는 앱<br/>(심사 중)"
+                description: "음악을 악보로 실시간 변환하는 앱"
+            },
+            testory: {
+                title: "Testory",
+                description: "안드로이드 앱 리뷰 및 테스트 플랫폼<br/>(제작 중)"
             }
         },
         about: {
@@ -90,7 +94,11 @@ const translations = {
             },
             chordmate: {
                 title: "Chord Mate",
-                description: "Chord Recognition App<br/>(Coming Soon)"
+                description: "Real-time Music to Sheet Music Converter"
+            },
+            testory: {
+                title: "Testory",
+                description: "Android App Review and Testing Platform<br/>(Under Construction)"
             }
         },
         about: {
