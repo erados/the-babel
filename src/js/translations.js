@@ -19,7 +19,7 @@ const translations = {
             },
             refroulette: {
                 title: "Ref Roulette",
-                description: "레퍼럴 공유 플랫폼<br/>(공사 중)"
+                description: "레퍼럴 공유 플랫폼<br/>(서비스 중단)"
             },
             rulebook: {
                 title: "Rulebook",
@@ -78,7 +78,7 @@ const translations = {
             },
             refroulette: {
                 title: "Ref Roulette",
-                description: "Referral Sharing Platform<br/>(Under Maintenance)"
+                description: "Referral Sharing Platform<br/>(Service Discontinued)"
             },
             rulebook: {
                 title: "Rulebook",
