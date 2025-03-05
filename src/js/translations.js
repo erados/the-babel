@@ -7,7 +7,7 @@ const translations = {
         hero: {
             title: "We Build<br>Digital Babel",
             subtitle: "국가와 언어의 한계를 뛰어넘어 당신에게 주어진 모든 인연과 기회를 되찾으세요.",
-            description1: "The Babel에서는 모든 사람들의 말이 당신의 언어로 통합되는 공간을 만듭니다.",
+            description1: "The Babel에서는 모든 사람들의 말이 당신의 언어로 통합되는 <i><b>공간</b></i>을 만듭니다.",
             description2: "당신에게 주어진 모든 가능성을 탐험하세요."
         },
         projects: {
@@ -67,7 +67,7 @@ const translations = {
         hero: {
             title: "We Build<br>Digital Babel",
             subtitle: "Transcend national and language barriers to reclaim all the connections and opportunities given to you.",
-            description1: "At The Babel, we create a world where everyone's words are unified in your language.",
+            description1: "At The Babel, we create a <i><b>space</b></i> where everyone's words are unified in your language.",
             description2: "Explore all the possibilities given to you."
         },
         projects: {
