@@ -50,10 +50,6 @@ const translations = {
                 title: "Tadone",
                 description: "생활 주기 관리 트래커"
             },
-            bookquest: {
-                title: "BookQuest",
-                description: "독서 질문 & 토론 플랫폼"
-            },
             burnrate: {
                 title: "BurnRate",
                 description: "Claude 사용량 모니터 (macOS)"
@@ -126,10 +122,6 @@ const translations = {
             tadone: {
                 title: "Tadone",
                 description: "Life Task Cycle Tracker"
-            },
-            bookquest: {
-                title: "BookQuest",
-                description: "Book Questions & Discussion Platform"
             },
             burnrate: {
                 title: "BurnRate",
