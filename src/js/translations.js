@@ -50,6 +50,10 @@ const translations = {
                 title: "Tadone",
                 description: "생활 주기 관리 트래커"
             },
+            lifegraph: {
+                title: "Life Graph",
+                description: "인생 곡선 시각화 도구"
+            },
             burnrate: {
                 title: "BurnRate",
                 description: "Claude 사용량 모니터 (macOS)"
@@ -122,6 +126,10 @@ const translations = {
             tadone: {
                 title: "Tadone",
                 description: "Life Task Cycle Tracker"
+            },
+            lifegraph: {
+                title: "Life Graph",
+                description: "Life Curve Visualization Tool"
             },
             burnrate: {
                 title: "BurnRate",
