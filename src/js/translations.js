@@ -15,7 +15,8 @@ const translations = {
                 all: "전체",
                 webapp: "웹 앱",
                 chrome: "크롬 익스텐션",
-                mobileapp: "모바일 앱"
+                mobileapp: "모바일 앱",
+                desktop: "데스크톱 앱"
             },
             refroulette: {
                 title: "Ref Roulette",
@@ -40,6 +41,22 @@ const translations = {
             testory: {
                 title: "Testory",
                 description: "안드로이드 앱 리뷰 및 테스트 플랫폼<br/>(제작 중)"
+            },
+            muktalk: {
+                title: "MukTalk",
+                description: "포장식품 리뷰 커뮤니티"
+            },
+            tadone: {
+                title: "Tadone",
+                description: "생활 주기 관리 트래커"
+            },
+            bookquest: {
+                title: "BookQuest",
+                description: "독서 질문 & 토론 플랫폼"
+            },
+            burnrate: {
+                title: "BurnRate",
+                description: "Claude 사용량 모니터 (macOS)"
             }
         },
         about: {
@@ -74,7 +91,9 @@ const translations = {
             categories: {
                 all: "All",
                 webapp: "Web App",
-                chrome: "Chrome Extension"
+                chrome: "Chrome Extension",
+                mobileapp: "Mobile App",
+                desktop: "Desktop App"
             },
             refroulette: {
                 title: "Ref Roulette",
@@ -99,6 +118,22 @@ const translations = {
             testory: {
                 title: "Testory",
                 description: "Android App Review and Testing Platform<br/>(Under Construction)"
+            },
+            muktalk: {
+                title: "MukTalk",
+                description: "Packaged Food Review Community"
+            },
+            tadone: {
+                title: "Tadone",
+                description: "Life Task Cycle Tracker"
+            },
+            bookquest: {
+                title: "BookQuest",
+                description: "Book Questions & Discussion Platform"
+            },
+            burnrate: {
+                title: "BurnRate",
+                description: "Claude Usage Monitor (macOS)"
             }
         },
         about: {
