@@ -54,6 +54,10 @@ const translations = {
                 title: "Life Graph",
                 description: "인생 곡선 시각화 도구"
             },
+            vre: {
+                title: "VRE",
+                description: "시각적 기록 관리 엔진"
+            },
             burnrate: {
                 title: "BurnRate",
                 description: "Claude 사용량 모니터 (macOS)"
@@ -130,6 +134,10 @@ const translations = {
             lifegraph: {
                 title: "Life Graph",
                 description: "Life Curve Visualization Tool"
+            },
+            vre: {
+                title: "VRE",
+                description: "Visual Recording Engine"
             },
             burnrate: {
                 title: "BurnRate",
